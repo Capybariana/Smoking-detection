@@ -42,7 +42,7 @@ output.webm — путь для сохранения выходного виде
 
 ## Пример работы
 
-[text](output_detection.webm)
+Можете посмотреть в output_detection.webm
 
  ## Доработки
 
