@@ -14,14 +14,14 @@
 
 ## Используемый датасет
 
-Использован датасет: https://universe.roboflow.com/yolo-pdvpx/cigarette-h2p1m
+Использован личный датасет с камер НГУ
 
 ## Установка
 
 Для запуска проекта необходимо установить следующие зависимости:
 
 ```bash
-pip install opencv-python ultralytics argparse
+pip install -r requirements.txt
 ```
 ## Запуск
 
@@ -31,14 +31,18 @@ pip install opencv-python ultralytics argparse
 
 Пример команды для запуска:
  ```
-python3 CigaretteDetection.py input.mp4 output.webm
+python3 SmokingDetector.py --video=input.mp4 --json=input.json --output=ouput.mp4 --model=path/to/weights.pth
 
 ```
 Где:
 
 input.mp4 — путь к входному видеофайлу.
 
-output.webm — путь для сохранения выходного видеофайла.
+input.json — путь к входному JSON файлу с ключевыми точками людей в кадре. 
+
+output.mp4 — путь для сохранения выходного видеофайла.
+
+path/to/weights.pth - путь к весам обученной модели.
 
 ## Пример работы
 

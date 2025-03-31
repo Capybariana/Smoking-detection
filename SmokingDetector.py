@@ -5,7 +5,7 @@ import torch
 import numpy as np
 from tqdm import tqdm
 
-from Smoking import SmokingClassifier, SmokingDataset
+from DetectorBase import SmokingClassifier, SmokingDataset
 
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
