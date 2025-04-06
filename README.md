@@ -36,9 +36,9 @@
    ```
 
 2. Установите зависимости:
-```
-pip install -r requirements.txt
-```
+   ```
+   pip install -r requirements.txt
+   ```
 
 ## 🚀 Запуск
 
