@@ -47,9 +47,9 @@
 - Запустите скрипт обработки видео, указав пути к входному и выходному видеофайлам.
 
 Пример команды для запуска:
-```
-python3 SmokingDetector.py --video=input.mp4 --json=input.json --output=output.mp4 --model=path/to/weights.pth
-```
+   ```
+   python3 SmokingDetector.py --video=input.mp4 --json=input.json --output=output.mp4 --model=path/to/weights.pth
+   ```
 Аргументы:
 
 - --video — путь к исходному видео
