@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset
 import numpy as np
 
 import math
@@ -73,16 +73,16 @@ class KeypointSequenceDataset(Dataset):
     def __init__(self, video_path: str, csv_path: str, seq_len: int = 10):
         # Извлекаем последовательности с помощью функции из preprocess
         self.samples = extract_sequences(video_path, csv_path, seq_len)
-    
+
     def __len__(self):
         return len(self.samples)
-    
+
     def __getitem__(self, idx):
         seq, label, _ = self.samples[idx]  # frame нам не нужен
 
         person_sequence = [person_data[2] for person_data in seq]  # Извлекаем ключевые точки (оставляем только координаты)
         person_sequence = np.array(person_sequence)
-        
+
         seq_tensor = torch.tensor(person_sequence, dtype=torch.float32)
         label_tensor = torch.tensor(label, dtype=torch.long)
 

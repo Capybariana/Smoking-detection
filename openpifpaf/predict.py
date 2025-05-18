@@ -2,8 +2,10 @@ import cv2
 import torch
 import pandas as pd
 import numpy as np
+
 from model import TemporalTransformer
 from preprocess import extract_sequences
+
 
 def predict_and_save(video_path: str, csv_path: str, model_path: str, output_video_path: str, device: str = 'cpu', seq_len: int = 10):
     device = torch.device(device)

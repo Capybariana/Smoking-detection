@@ -1,6 +1,4 @@
 import subprocess
-import sys
-import os
 import time
 
 # Пути до интерпретаторов виртуальных окружений (пример для Unix-подобных систем)

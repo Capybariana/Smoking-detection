@@ -3,11 +3,13 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, random_split
 from sklearn.metrics import accuracy_score
-import random
 import numpy as np
-import os
+
+import random
+import o
 
 from model import TemporalTransformer, KeypointSequenceDataset
+
 
 # ======= Настройки =======
 video_path = 'data/video.mp4'
@@ -20,16 +22,21 @@ save_path = './best_model_100.pth'
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+
 # ======= Фиксируем зерно для воспроизводимости =======
 def set_seed(seed=42):
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed_all(seed)
+
+
 set_seed()
 
 # ======= Датасеты =======
-full_dataset = KeypointSequenceDataset(video_path=video_path, csv_path=csv_path, seq_len=seq_len)
+full_dataset = KeypointSequenceDataset(video_path=video_path,
+                                       csv_path=csv_path,
+                                       seq_len=seq_len)
 
 # 80% train, 20% val
 train_size = int(0.8 * len(full_dataset))

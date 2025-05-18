@@ -90,4 +90,3 @@ def extract_sequences(video_path: str, csv_path: str, seq_len: int = 10) -> List
 
     cap.release()
     return samples
-

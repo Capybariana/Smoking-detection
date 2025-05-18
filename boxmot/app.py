@@ -9,8 +9,10 @@ VIDEO_DIR = Path("../shared/videos")
 OUTPUT_DIR = Path("../shared/csv")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
+
 class VideoRequest(BaseModel):
     filename: str
+
 
 @app.post("/process")
 def process_video(request: VideoRequest):

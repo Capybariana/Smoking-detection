@@ -6,6 +6,7 @@ from boxmot import BotSort
 import torch
 import numpy as np
 
+
 def process_video_with_tracking(video_path: str, output_csv_path: str):
     device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 
@@ -74,5 +75,3 @@ def process_video_with_tracking(video_path: str, output_csv_path: str):
 
     cap.release()
     csv_file.close()
-
-# process_video_with_tracking('../shared/input.mp4', '../shared/output.csv')

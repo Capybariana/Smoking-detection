@@ -11,11 +11,12 @@ VIDEO_DIR = Path("../shared/videos")
 CSV_DIR = Path("../shared/csv")
 OUTPUT_DIR = Path("../shared/output")
 MODEL_PATH = "best_model_100.pth"
-
 OUTPUT_DIR.mkdir(exist_ok=True)
+
 
 class PredictRequest(BaseModel):
     video_filename: str
+
 
 @app.post("/predict")
 def predict(request: PredictRequest):
